@@ -2,12 +2,32 @@
 
 @{
     ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<ul>
+
+<ul class="gigs">
     @foreach (var gig in Model)
     {
-      
-        <li>@gig.Datetime - @gig.Artist.UserName</li>
+        <li>
+            <div class="date">
+                <div class="month">
+                    @gig.Datetime.ToString("MMM")
+                </div>
+                <div class="day">
+                    @gig.Datetime.ToString("d ")
+                </div>
+            </div>
+            <div class="details">
+                <span class="artist">
+                    @gig.Artist.SignInName
+                </span>
+                <span class="genre">
+                    @gig.Genre.Name
+                </span>
+            </div>
+        </li>
+
+
     }
 </ul>

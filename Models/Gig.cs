@@ -12,7 +12,7 @@ namespace GigHubMVC.Models
         public int Id { get; set; }
 
 
-        public IdentityUser Artist { get; set; }
+        public ApplicationUser Artist { get; set; }
 
         [Required]
         public string ArtistId { get; set; }

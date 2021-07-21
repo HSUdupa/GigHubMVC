@@ -43,6 +43,7 @@ namespace GigHubMVC
 
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddRazorPages().AddRazorRuntimeCompilation();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -66,6 +67,7 @@ namespace GigHubMVC
 
             app.UseAuthentication();
             app.UseAuthorization();
+            app.UseBrowserLink();
 
             app.UseEndpoints(endpoints =>
             {
